@@ -9,6 +9,10 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve fazer cadastro com sucesso, usando função ', () => {
         let email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Alisson Ferreira')
@@ -18,6 +22,7 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cy.get('#confirm-password').type('Teste@123')
         cy.get('#terms-agreement').check()
         cy.get('#register-btn').click()
+       
         cy.url().should('include', 'dashboard')
     });
 

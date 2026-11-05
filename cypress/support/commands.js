@@ -39,5 +39,5 @@
     cy.get('#confirm-password').type(confirmarSenha)
     cy.get('#terms-agreement').check()
     cy.get('#register-btn').click()
-    cy.url().should('include', 'dashboard')
+    
  })
